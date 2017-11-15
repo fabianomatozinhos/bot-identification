@@ -1,5 +1,5 @@
 <?php 
-teste
+
 require 'config.php';
 
 
