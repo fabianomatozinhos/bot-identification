@@ -2,7 +2,7 @@
 
 require 'config.php';
 
-
+dshfh
 class ClassBanco{
 
 	public function buscaDadoSeguidores($perfil){	
