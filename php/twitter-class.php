@@ -42,19 +42,12 @@ class ClassTwitter
 
 	}
 
-	public function gravaDadoSeguidorSeguidor($id_perfil , $id_seguidores){
+	public function gravaDadoSeguidorSeguidor($id_perfil , $id_seguidor){
 
 		$this->banco = new ClassBanco();
 
-			$arrayIds = array();
-			foreach ($id_seguidores as $key => $valueI) {
+		$this->banco->gravaDadoSeguidor($id_perfil  ,$value);
 
-				if ($key == 'ids') {
-					foreach ($valueI as $key => $value) {
-						$arrayIds[] = array($value);
-						$this->banco->gravaDadoSeguidor($id_perfil  ,$value);
-					}
-				}
 	
 /*			$perfil = $this->getPerfil(2, $value['id_seguidor']);
 			$seguidor = $this->getSeguidor(2, $value['id_seguidor']);
@@ -73,10 +66,6 @@ class ClassTwitter
 			print_r($id_seguidores );
 			echo "</pre>";
 		*/
-				
-
-			}
-		return $arrayIds;
 	}
 
 

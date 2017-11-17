@@ -5,10 +5,11 @@ require 'config.php';
 
 class ClassBanco{
 
-	public function buscaDadoSeguidores($perfil){	
+	public function buscaDadoSeguidores($id){	
 	//select 
 		global $pdo;
-	 	$sql =  "SELECT id_user,id_seguidor FROM relacionamento WHERE id_user = ".$perfil;
+	 	$sql =  "SELECT id_seguidor FROM relacionamento  WHERE id_relacionamento = $id";
+	 	echo $sql;
 		$sql = $pdo->query($sql);
 
 		if ($sql->rowCount() > 0) {
@@ -38,6 +39,7 @@ class ClassBanco{
 	//insert
 		global $pdo;
 		$sql = "INSERT INTO relacionamento (id_user, id_seguidor) VALUES( ".$id_user.", ".$id_seguidor.")";
+		//echo $sql;
 		$sql = $pdo->query($sql);
 	}
 
