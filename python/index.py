@@ -4,7 +4,7 @@ import MySQLdb
 db = MySQLdb.connect(host="localhost", user="root", passwd="", db="twitter")
 cursor = db.cursor()
 
-cursor.execute("SELECT id_seguidor FROM relacionamento")
+cursor.execute("SELECT id_seguidor FROM relacionamento WHERE id_relacionamento > 50000")
 data = cursor.fetchall()
 array = []
 user = []
