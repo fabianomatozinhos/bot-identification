@@ -42,32 +42,41 @@ class ClassTwitter
 
 	}
 
-	public function gravaDadoSeguidorSeguidor($id_perfil , $id_seguidor){
+	public function getSeguidorSeguidor($array_seguidores){
 
-		$this->banco = new ClassBanco();
 
-		$this->banco->gravaDadoSeguidor($id_perfil  ,$value);
+        foreach ($array_seguidores as $keyI => $valueI) {
+            
+            foreach ($valueI as $keyII => $valueII) {
+            
+                if ($keyII==='id_seguidor') {
 
-	
-/*			$perfil = $this->getPerfil(2, $value['id_seguidor']);
-			$seguidor = $this->getSeguidor(2, $value['id_seguidor']);
-			$this->gravaAll($perfil, $seguidor);
-*/
-			/*echo "<pre>";
-			print_r($perfil );
-			echo "</pre>";*/
-			/*echo "<pre>";
-			print_r($seguidor );
-			echo "</pre>";*/
 
-				//$id_seguidores = $this->banco->buscaDadoSeguidores($value['id_seguidor']);
-/*
-						echo "<pre>";
-			print_r($id_seguidores );
-			echo "</pre>";
-		*/
-	}
+                     $seguidor = $this->getSeguidor(190, $valueII);
+                }
+            }
+        }
 
+        $this->gravaSeguidor($valueII, $seguidor);
+    }
+
+    public function gravaSeguidor($valueII, $seguidor){
+
+
+    	$this->banco = new ClassBanco();
+
+        foreach ($seguidor as $keyIV => $valueIV) {
+
+            if ($keyIV == 'ids') {
+                
+                foreach ($valueIV as $keyV => $valueV) {
+
+                   echo($this->banco->gravaDadoSeguidor($valueII, $valueV));
+                }
+            }
+        }
+
+    }
 
 	public function gravaAll($perfil, $seguidor){
 
