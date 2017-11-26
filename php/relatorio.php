@@ -20,7 +20,7 @@ foreach ($json_extra as $key => $arrayJson) {
 		if ($key === 'id_user') {
 
 echo "<pre>";
-print_r($arrayJsonII);
+print_r($arrayJson);
 echo "</pre>";
 
 
